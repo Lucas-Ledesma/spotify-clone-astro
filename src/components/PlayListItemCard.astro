@@ -13,7 +13,8 @@ const artistsString = artists.join(', ')
 
 <a
 	href=`/playlists/${id}`
-	class='playlist-item transition-all duration-300 flex relative p-2 overflow-hidden items-center gap-2 rounded-md pb-6 hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col'>
+	class='playlist-item transition-all duration-300 flex relative p-2 overflow-hidden items-center gap-2 rounded-md pb-6 hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col'
+	transition:name=`playlist ${id} box`>
 	<picture class='aspect-square w-full h-auto flex-none'>
 		<img
 			src={cover}
@@ -24,9 +25,14 @@ const artistsString = artists.join(', ')
 	</picture>
 
 	<div class='flex flex-auto flex-col w-full'>
-		<h4 class='text-sm text-white'>{title}</h4>
+		<h4
+			class='text-sm text-white'
+			transition:name=`playlist ${id} title`>{title}</h4
+		>
 
-		<span class='text-xs text-gray-400'>
+		<span
+			class='text-xs text-gray-400'
+			transition:name=`playlist ${id} artists`>
 			{artistsString}
 		</span>
 	</div>
